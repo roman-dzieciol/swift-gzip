@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 final internal class GZipReader {
 
     internal private(set) var index: Data.Index
@@ -23,7 +24,9 @@ final internal class GZipReader {
             fatalError()
         }
 
-        let value: T = data[index..<index+size].withUnsafeBytes { $0.pointee }
+        let value: T = data[index..<index+size].withUnsafeBytes { (ptr: UnsafeRawBufferPointer) -> T in
+            return ptr.baseAddress!.bindMemory(to: T.self, capacity: 1).pointee
+        }
         index += size
         return value
     }
@@ -37,8 +40,8 @@ final internal class GZipReader {
         return String(bytes: bytes, encoding: .utf8)!
     }
 
-    internal func data(offset: Data.Index) -> Data {
-        let endIndex = index + offset
+    internal func data(length: Data.Index) -> Data {
+        let endIndex = index + length
         defer {
             index = endIndex
         }
