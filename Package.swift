@@ -23,6 +23,9 @@ let package = Package(
         .testTarget(
             name: "RDGZipTests",
             dependencies: ["RDGZip"]),
+    ],
+    swiftLanguageVersions: [
+        .v5
     ]
 )
 
