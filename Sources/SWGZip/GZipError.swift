@@ -1,6 +1,6 @@
 //
 //  GZipError.swift
-//  RDGZip
+//  SWGZip
 //
 //  Created by Roman Dzieciol on 3/31/19.
 //
