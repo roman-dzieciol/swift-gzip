@@ -1,5 +1,5 @@
 import XCTest
-@testable import RDGZip
+@testable import SWGZip
 
 final class GZipArchiveTests: XCTestCase {
 

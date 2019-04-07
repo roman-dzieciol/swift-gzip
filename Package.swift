@@ -3,26 +3,34 @@
 
 import PackageDescription
 
+
+private struct SWGZip {
+    static let name = "SWGZip"
+}
+
 let package = Package(
-    name: "RDGZip",
+    name: SWGZip.name,
     platforms: [
         .macOS(.v10_11),
         .iOS(.v9),
     ],
     products: [
         .library(
-            name: "RDGZip",
-            targets: ["RDGZip"]),
+            name: SWGZip.name,
+            targets: [SWGZip.name]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "RDGZip",
+            name: SWGZip.name,
             dependencies: []),
         .testTarget(
-            name: "RDGZipTests",
-            dependencies: ["RDGZip"]),
+            name: SWGZip.name + "Tests",
+            dependencies: [.target(name: SWGZip.name)]),
+    ],
+    swiftLanguageVersions: [
+        .v5
     ]
 )
 
