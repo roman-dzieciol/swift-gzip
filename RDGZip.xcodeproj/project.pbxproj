@@ -84,8 +84,8 @@
       "OBJ_19" = {
          isa = "PBXGroup";
          children = (
-            "RDGZip::RDGZipTests::Product",
-            "RDGZip::RDGZip::Product"
+            "RDGZip::RDGZip::Product",
+            "RDGZip::RDGZipTests::Product"
          );
          name = "Products";
          path = "";
